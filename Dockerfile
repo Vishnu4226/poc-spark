@@ -1,7 +1,7 @@
 #Docker file for Pulling image and deploying the application
 FROM vishnu4772/test:poc
 MAINTAINER Vishnu Vardhan
-RUN yum update && yum install wget
+RUN yum update && yum install wget -y
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.1-bin-hadoop2.6.tgz
 RUN tar -xvf spark-1.6.1-bin-hadoop2.6.tgz
 ENV SPARK_HOME /usr/local/spark-1.6.1-bin-hadoop2.6
