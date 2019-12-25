@@ -1,21 +1,3 @@
-Skip to content
-Search or jump to…
-
-Pull requests
-Issues
-Marketplace
-Explore
- 
-@Vishnu4226 
-91
-1.1k542sequenceiq/hadoop-docker
- Code Issues 32 Pull requests 4 Actions Projects 0 Wiki Security Insights
-hadoop-docker/Dockerfile
-@melekes melekes expose MapReduce JobHistory Server IPC host:port
-a267a83 on May 20, 2016
-@akanto@lalyos@mhmxs@keyki@trisberg@sroegner@doktoric@paoloantinori@lresende@kliewkliew@gliptak@cglewis@melekes
-110 lines (85 sloc)  3.99 KB
-  
 # Creates pseudo distributed hadoop 2.7.1
 #
 # docker build -t sequenceiq/hadoop .
