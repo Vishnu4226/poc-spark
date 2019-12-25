@@ -11,7 +11,9 @@ RUN tar -xvf spark-1.6.1-bin-hadoop2.6.tgz
 ENV SPARK_HOME /spark-1.6.1-bin-hadoop2.6
 COPY target/**scala-2.11**/spark-example-project_2.11-1.0.0-SNAPSHOT.jar /spark-1.6.1-bin-hadoop2.6/bin
 RUN echo "This is the first docker file in happiest minds" >> vishnu
-ENV JAVA_HOME /usr/java/default
+RUN wget https://cdn.azul.com/zulu/bin/zulu8.42.0.23-ca-jdk8.0.232-linux_x64.tar.gz
+RUN tar -xvf zulu8.42.0.23-ca-jdk8.0.232-linux_x64.tar.gz
+ENV JAVA_HOME=/zulu8.42.0.23-ca-jdk8.0.232-linux_x64
 RUN ./spark-1.6.1-bin-hadoop2.6/bin/spark-submit --class me.soulmachine.spark.WordCount /spark-1.6.1-bin-hadoop2.6/bin/spark-example-project_2.11-1.0.0-SNAPSHOT.jar vishnu outputfile
 #CMD ["/root/hadoop/hadoop-2.10.0/sbin/start-dfs.sh", "run"]
 #CMD ["/root/hadoop/hadoop-2.10.0/sbin/start-yarn.sh", "run"]
