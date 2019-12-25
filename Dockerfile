@@ -3,6 +3,7 @@ FROM vishnu4772/test:poc
 MAINTAINER Vishnu Vardhan
 #RUN yum install wget -y
 #RUN yum -y upgrade
+RUN yum -y install openssh-server passwd supervisor
 RUN yum -y install wget
 RUN wget http://d3kbcqa49mib13.cloudfront.net/spark-1.6.1-bin-hadoop2.6.tgz
 RUN tar -xvf spark-1.6.1-bin-hadoop2.6.tgz
