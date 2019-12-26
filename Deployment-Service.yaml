@@ -8,8 +8,12 @@ spec:
     app: pocdemo                             #This is name and deployment file labe name must should be the same.
   type: LoadBalancer
   ports:
-    - port: 8088
+    - name: hadoop
+      port: 8088
       targetPort: 8088
+    - name: resourcemgr
+      port: 50070
+      targetPort: 50070
 ---
 apiVersion: apps/v1
 kind: Deployment
@@ -27,4 +31,4 @@ spec:
     spec:
       containers:
         - name: poc-vishnu
-          image: "981774949705.dkr.ecr.us-east-1.amazonaws.com/pocrepo:latest"
+          image: "981774949705.dkr.ecr.us-east-1.amazonaws.com/pocrepo:51"
