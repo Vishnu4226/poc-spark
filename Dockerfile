@@ -10,7 +10,6 @@ RUN echo "This is the first docker file in happiest minds" >> vishnu
 RUN ./usr/local/spark-1.6.1-bin-hadoop2.6/bin/spark-submit --class me.soulmachine.spark.WordCount /usr/local/spark-1.6.1-bin-hadoop2.6/bin/spark-example-project_2.11-1.0.0-SNAPSHOT.jar vishnu s3://outputfile-bigdata/outputfile
 #CMD ["/root/hadoop/hadoop-2.10.0/sbin/start-dfs.sh", "run"]
 #CMD ["/root/hadoop/hadoop-2.10.0/sbin/start-yarn.sh", "run"]
-=======
 #RUN yum install wget -y
 #RUN yum -y upgrade
 RUN yum -y install openssh-server passwd supervisor || true
