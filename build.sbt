@@ -128,9 +128,5 @@ import sbtsonar.SonarPlugin.autoImport.sonarProperties
 
 sonarProperties ++= Map(
 
-"sonar.sources" -> "src/main/scala",
-
-"sonar.tests" -> "src/test/scala",
-
-"sonar.modules" -> "module1,module2")
+"sonar.sources" -> ".")
 
