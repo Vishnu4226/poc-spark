@@ -124,6 +124,4 @@ scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits",
   )
 
 autoAPIMappings := true
-import sbtsonar.SonarPlugin.autoImport.sonarUseExternalConfig
 
-sonarUseExternalConfig := true
