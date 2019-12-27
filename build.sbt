@@ -125,8 +125,8 @@ scalacOptions in (Compile,doc) ++= Seq("-groups", "-implicits",
 
 autoAPIMappings := true
 sonarProperties ++= Map(
-      "sonar.host.url" -> "http://sonarhostname.com",
-      "sonar.jdbc.username" -> "sonar",
-      "sonar.jdbc.password" -> "sonar"
+      "sonar.host.url" -> "http://18.206.96.17:9000/",
+      "sonar.jdbc.username" -> "admin",
+      "sonar.jdbc.password" -> "admin"
   )
 
