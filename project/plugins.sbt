@@ -11,3 +11,4 @@ addSbtPlugin("org.scalastyle" %% "scalastyle-sbt-plugin" % "0.7.0")
 addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1.12")
 
 addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
+addSbtPlugin("com.aol.sbt" % "sbt-sonarrunner-plugin" % "1.1.0")
