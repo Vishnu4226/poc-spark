@@ -12,3 +12,5 @@ addCompilerPlugin("org.psywerx.hairyfotr" %% "linter" % "0.1.12")
 
 addSbtPlugin("com.github.mpeltonen" % "sbt-idea" % "1.6.0")
 
+//This integrates sonar for SBT
+addSbtPlugin("com.github.mwz" % "sbt-sonar" % "2.1.0")      
