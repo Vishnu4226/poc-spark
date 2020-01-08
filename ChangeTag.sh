@@ -1,2 +1,2 @@
 #!/bin/bash
-sed "s/latest/$1/g" Dep.yaml
+sed "s/latest/$1/g" Dep.yaml > DeloymentNew.yaml
