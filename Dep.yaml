@@ -1,0 +1,35 @@
+#This is the deployment file written by Vishnu
+apiVersion: v1
+kind: Service
+metadata:
+  name: poc-service
+spec:
+  selector:
+    app: pocdemo                             #This is name and deployment file labe name must should be the same.
+  type: LoadBalancer
+  ports:
+    - name: hadoop
+      port: 8080
+      targetPort: 8080
+    - name: resourcemgr
+      port: 18080
+      targetPort: 18080
+---
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: poc-deployment
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: pocdemo
+  template:
+    metadata:
+      labels:
+        app: pocdemo
+    spec:
+      containers:
+        - name: poc-vishnu
+          image: "981774949705.dkr.ecr.us-east-1.amazonaws.com/pocrepo:110"
+          command: ["sh", "-c", "/root/spark/spark-2.2.0-bin-hadoop2.7/sbin/start-all.sh && /root/spark/spark-2.2.0-bin-hadoop2.7/sbin/start-history-server.sh && sleep 500"]
