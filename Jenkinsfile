@@ -35,9 +35,11 @@ node{
         sh'''
         #kubectl delete deployment poc-deployment
         #kubectl delete service poc-service
-        sed 's/latest/'${BUILD_NUMBER}'/g' Deployment-Service.yaml
+        #sed 's/latest/'${BUILD_NUMBER}'/g' Dep.yaml
+        chmod +x ChangeTag.sh
+        ./ChangeTag.sh ${BUILD_NUMBER}
         aws eks --region us-east-1 update-kubeconfig --name poccluster
-        kubectl create -f Dep.yaml
+        kubectl create -f DeloymentNew.yaml
         '''
     }
 }
