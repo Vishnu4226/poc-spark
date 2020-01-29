@@ -31,5 +31,5 @@ spec:
     spec:
       containers:
         - name: poc-vishnu
-          image: "010050280358.dkr.ecr.ap-south-1.amazonaws.com/poc-spark-eks:latest"
+          image: "010050280358.dkr.ecr.ap-south-1.amazonaws.com/poc-spark-eks:15"
           command: ["sh", "-c", "/root/spark/spark-2.2.0-bin-hadoop2.7/sbin/start-all.sh && /root/spark/spark-2.2.0-bin-hadoop2.7/sbin/start-history-server.sh && sleep 500"]
