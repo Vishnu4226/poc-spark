@@ -7,9 +7,13 @@ node{
         
             sh'''
             #sbt clean package -Dsonar.projectKey=hmpoc -Dsonar.projectName=hmpoc -Dsonar.host.url=http://52.87.201.133:9000 -Dsonar.login='admin' -Dsonar.password='admin' sonarScan
-            #sbt clean package  -Dproject.settings=sonar-project.properties -Dsonar.login='admin' -Dsonar.password='admin' sonarScan
+            #sbt clean package  -Dproject.settings=./sonar-project.properties -Dsonar.login='admin' -Dsonar.password='admin' sonarScan
             sbt clean package  
             '''
+            /*withSonarQubeEnv(installationName: 'SonarQubeServer') {
+                sh "sonar-scanner"
+            }*/ 
+            sh "sonar-scanner"
     }
     stage('Upload'){
         dir('/var/lib/jenkins/workspace/Poc-Spark-EKS/target/scala-2.11/')
